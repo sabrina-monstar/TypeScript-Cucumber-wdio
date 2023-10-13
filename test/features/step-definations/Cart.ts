@@ -44,15 +44,15 @@ When(/^click on login link and enter login credentials$/, async function () {
 });
 
 
-// When(/^click on subscription$/, async function () {
-// 	let subscription = await $(`//h2[normalize-space()='Subscription']`)
-// 	subscription.scrollIntoView()
+When(/^click on subscription$/, async function () {
+	let subscription = await $(`//h2[normalize-space()='Subscription']`)
+	subscription.scrollIntoView()
 
-// 	//subscription email
-// 	let subscriptionEmail = await $(`#susbscribe_email`);
-// 	await subscriptionEmail.setValue("sabrinamdel@gmail.com");
-// 	await browser.pause(2000);
-// 	let subscriptionButton = await $(`.fa.fa-arrow-circle-o-right`);
-// 	subscriptionButton.click();
-// 	await browser.pause(4000);
-// });
+	//subscription email
+	let subscriptionEmail = await $(`#susbscribe_email`);
+	await subscriptionEmail.setValue("sabrinamdel@gmail.com");
+	await browser.pause(2000);
+	let subscriptionButton = await $(`.fa.fa-arrow-circle-o-right`);
+	subscriptionButton.click();
+	await browser.pause(4000);
+});
