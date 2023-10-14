@@ -1,7 +1,7 @@
 Feature: Register Page
 
-Background: Common URL
-Given open the browser and navigate to test url
+    Background: Common URL
+        Given open the browser and navigate to test url
 
     @Register
     Scenario Outline: As a user, I want to register the account
