@@ -1,10 +1,9 @@
 import { Given, When } from "@wdio/cucumber-framework";
 import LoginPage from "../../pageobjects/login.page";
-//import locatorPage from "../../pageobjects/locator.page";
+import locatorPage from "../../pageobjects/locator.page";
 import cartPage from "../../pageobjects/cart.page";
 
 Given(/^Launch the browser$/, async function () {
-	//await browser.url("/");
 	cartPage.open()
 	await browser.maximizeWindow();
 	await browser.pause(3000);
@@ -35,11 +34,11 @@ When(/^click on login link and enter login credentials$/, async function () {
 });
 
 
-// When(/^click on subscription$/, async function () {
-// 	await browser.scroll(0, 700);
+When(/^click on subscription$/, async function () {
+	await browser.scroll(0, 700);
 
-// 	//subscription email
-// 	await (await locatorPage.subscriptionEmail).setValue(process.env.TEST_EMAIL!);
-// 	(await locatorPage.subscriptionButton).click()
-// 	await browser.pause(4000);
-// });
+	//subscription email
+	await (await locatorPage.subscriptionEmail).setValue(process.env.TEST_EMAIL!);
+	(await locatorPage.subscriptionButton).click()
+	await browser.pause(4000);
+});
