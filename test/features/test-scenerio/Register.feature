@@ -11,17 +11,10 @@ Feature: Register Page
         When Select the Title
         And click on Password
         Then click on DOB
-        And enter adress info
-
+        And user will enter the following details
 
         Examples:
-            | NewText          | UserName    | Email                 | Header                    | gender | date |
-            | New User Signup! | sabrina2023 | sabrinamdel@gmail.com | ENTER ACCOUNT INFORMATION | Mrs.   | 25    |
-
-
-    @home
-    Scenario Outline: I want to visit home and product page
-        When Product page can be clickable
-        And Verify that home page is visible successfully
+            | NewText          | UserName | Email                   | Header                    | gender | date |
+            | New User Signup! | Emma2023 | sabrinamdel+3@gmail.com | ENTER ACCOUNT INFORMATION | Mrs.   | 25   |
 
 
