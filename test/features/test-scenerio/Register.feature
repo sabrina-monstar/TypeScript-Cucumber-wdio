@@ -10,11 +10,13 @@ Feature: Register Page
         Then Verify the <Header>
         When Select the Title
         And click on Password
+        Then click on DOB
+        And enter adress info
 
 
         Examples:
-            | ExpectedURL                           | NewText          | UserName    | Email                 | Header                    |
-            | https://automationexercise.com/signup | New User Signup! | sabrina2023 | sabrinamdel@gmail.com | ENTER ACCOUNT INFORMATION |
+            | NewText          | UserName    | Email                 | Header                    | gender | date |
+            | New User Signup! | sabrina2023 | sabrinamdel@gmail.com | ENTER ACCOUNT INFORMATION | Mrs.   | 25    |
 
 
     @home
