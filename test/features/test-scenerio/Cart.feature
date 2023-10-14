@@ -7,7 +7,7 @@ Feature: Add to Cart Page
         When click on add to the cart
         And click on view cart
         And click on login link and enter login credentials
-        #And click on subscription
+        And click on subscription
 
 
 

@@ -2,8 +2,9 @@ import { Given, When } from "@wdio/cucumber-framework";
 import LoginPage from "../../pageobjects/login.page";
 //import locatorPage from "../../pageobjects/locator.page";
 
+
 Given(/^Launch the brower$/, async function () {
-  await browser.url("https://automationexercise.com/login");
+  LoginPage.open()
   await browser.maximizeWindow();
   await browser.pause(3000);
 });

@@ -14,6 +14,22 @@ class locator {
   get signupButton() { return $(`a[href='/login']`) }
   get pass() { return $(`#password`) }
 
+  //cart
+  // get addToCart() { return $(`//body[1]/section[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]`) }
+  // get viewCart() { return $(`//u[contains(text(),'View Cart')]`) }
+  // get checkout() { return $(`//a[normalize-space()='Proceed To Checkout']`) }
+  // get loginLink() { return $(`//u[contains(text(),'Register / Login')]`)}
+
+  //subscription-feature
+  get subscriptionEmail() {return $(`#susbscribe_email`)}
+  get subscriptionButton() {return $(`.fa.fa-arrow-circle-o-right`)}
+
+  //product
+  get productLink() { return $(`a[href='/products']`)}
+  get home() { return $(`//a[normalize-space()='Home']`)}
 }
 
+
 export default new locator()
+
+

@@ -1,6 +1,6 @@
-//import Page from "./page";
+import Page from "./page";
 
-class LoginPage {
+class LoginPage extends Page {
   get username() {
     return $(`input[data-qa='login-email']`);
   }
@@ -18,6 +18,11 @@ class LoginPage {
     await this.password.setValue(pass);
     await this.loginButton.click();
   }
+
+  public open() {
+    return super.open('login');
+  }
+
 }
 
 export default new LoginPage();

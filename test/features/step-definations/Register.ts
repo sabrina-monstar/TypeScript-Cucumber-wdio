@@ -3,7 +3,7 @@ import { Given, When, Then } from "@wdio/cucumber-framework";
 import locatorPage from "../../pageobjects/locator.page";
 
 Given(/^open the browser and navigate to test url$/, async function () {
-  await browser.url("https://automationexercise.com/login");
+  await browser.url("/login");
   await browser.maximizeWindow();
   await browser.pause(2000);
 });
@@ -32,22 +32,17 @@ When(/^Select the Title$/, async function () {
 });
 
 When(/^click on Password$/, async function () {
-  await locatorPage.pass.addValue("1234");
+  await locatorPage.pass.addValue(process.env.TEST_PASSWORD!);
   browser.pause(5000);
 });
 
-
-
 When(/^Product page can be clickable$/, async function () {
-  let productLink = await $(`a[href='/products']`);
-  await productLink.click();
-  await browser.pause(5000);
+  await locatorPage.productLink.click();
+  await browser.pause(2000);
 });
 
 When(/^Verify that home page is visible successfully$/, async function () {
-  let ele = await $(`//a[normalize-space()='Home']`);
-  //let ele = await $(`li:nth-child(1) a:nth-child(1)`);
-  await ele.click();
-  //await browser.debug()
-  await browser.pause(5000);
+  await locatorPage.home.click()
+  browser.pause(2000)
+
 });

@@ -99,7 +99,7 @@ export const config: Options.Testrunner = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://localhost',
+    baseUrl: 'https://automationexercise.com',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -143,7 +143,7 @@ export const config: Options.Testrunner = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ["./test/features/step-definations/Login.ts"],
+        require: ["./test/features/step-definations/Cart.ts"],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -159,7 +159,7 @@ export const config: Options.Testrunner = {
         // <boolean> fail if there are any undefined or pending steps
         strict: false,
         // <string> (expression) only execute the features or scenarios with tags matching the expression
-        tags: '@Login',
+        tags: '@Cart',
         // <number> timeout for step definitions
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
