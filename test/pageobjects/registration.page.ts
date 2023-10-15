@@ -34,6 +34,10 @@ class RegistrationPage extends Page {
     get create_button() { return $(`button[data-qa='create-account']`) }
 
 
+    //after_registration
+    get accoutText() { return $(`h2[class='title text-center'] b`) }
+    get continutButton() {return  $(`.btn.btn-primary`) }
+
 
     public open() {
         return super.open("login")

@@ -4,7 +4,6 @@ class ProductPage extends Page {
 
     get productLink() { return $(`a[href='/products']`); }
 
-
     public open() {
         return super.open("products")
     }
@@ -13,5 +12,4 @@ class ProductPage extends Page {
 
 
 }
-
 export default new ProductPage()

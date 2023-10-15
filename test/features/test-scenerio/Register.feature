@@ -7,6 +7,7 @@ Feature: Register Page
     Scenario Outline: As a user, I want to register the account
         Then Verify <NewText> is visible
         When Enter <UserName> and <Email>
+        #When Enter the username and email
         Then Verify the <Header>
         When Select the Title
         And click on Password
@@ -15,6 +16,6 @@ Feature: Register Page
 
         Examples:
             | NewText          | UserName | Email                   | Header                    | gender | date |
-            | New User Signup! | Emma2023 | sabrinamdel+3@gmail.com | ENTER ACCOUNT INFORMATION | Mrs.   | 25   |
+            | New User Signup! | Rmma2025 | sabrinamdel+6@gmail.com | ENTER ACCOUNT INFORMATION | Mrs.   | 25   |
 
 

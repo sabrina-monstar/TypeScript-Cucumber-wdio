@@ -35,16 +35,15 @@ When(/^Select the Title$/, async function () {
 });
 
 When(/^click on Password$/, async function () {
-  await registrationPage.pass.addValue("1234");
+  await registrationPage.pass.addValue(process.env.TEST_PASSWORD!);
   await browser.pause(2000);
 });
 
 
-
 Then(/^click on DOB$/, async function () {
-  registrationPage.day_ddown.selectByVisibleText("4")
-  registrationPage.month_ddown.selectByVisibleText("November")
-  registrationPage.year_ddown.selectByVisibleText("1994")
+  registrationPage.day_ddown.selectByVisibleText(resources.date)
+  registrationPage.month_ddown.selectByVisibleText(resources.month)
+  registrationPage.year_ddown.selectByVisibleText(resources.year)
   browser.pause(3000)
 
   registrationPage.newsletter.click();
@@ -52,7 +51,6 @@ Then(/^click on DOB$/, async function () {
   await browser.pause(3000)
 
 });
-
 
 Then(/^user will enter the following details$/, async function () {
 
@@ -63,7 +61,7 @@ Then(/^user will enter the following details$/, async function () {
   (await registrationPage.address).setValue(resources.addressInfo);
   (await registrationPage.country).selectByVisibleText(resources.countryName);
   await browser.pause(3000);
-  await browser.scroll(0, 700);
+  //await browser.scroll(0, 700);
   (await registrationPage.state).setValue(resources.stateName);
   await (await registrationPage.city).setValue(resources.cityName);
   await browser.pause(2000);
