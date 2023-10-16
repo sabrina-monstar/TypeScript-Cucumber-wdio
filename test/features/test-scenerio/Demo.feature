@@ -12,7 +12,7 @@ Feature: Demo
         And  Click Register button
         And Fill all details in Sign up and create account
         Then Verify <accountText> and click Continue button
-        # And  Verify <Logged in as username> at top
+        And  Verify <Logged in as username> at top
         # When Click Cart button
         # And Click Proceed To Checkout button
         # Then Verify Address Details and Review Your Order
