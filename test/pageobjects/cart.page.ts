@@ -18,6 +18,7 @@ class CartPage extends Page {
     get ExpireMonth() { return $(`input[placeholder='MM']`) }
     get ExpireYear() { return $(`input[placeholder='YYYY']`) }
     get submit() { return $(`//button[@id='submit']`) }
+    get orderMessage() { return $(`//p[normalize-space()='Congratulations! Your order has been confirmed!']`) }
 
     public open() {
         return super.open("")

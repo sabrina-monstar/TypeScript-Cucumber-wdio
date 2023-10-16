@@ -18,9 +18,9 @@ Feature: Demo
         Then Verify Address Details and Review Your Order
         When Enter <description> in comment text area and click Place Order
         When Enter payment details: Name on Card and <cardnumber> and <cvc> and <expirationMonth> and <expirationYear>
-        # And Click Pay and Confirm Order button
-        # Then Verify the success message <Your order has been placed successfully!>
+        And Click Pay and Confirm Order button
+        Then Verify the success <message>
 
         Examples:
-            | homepage   | accountText      | description               | cardnumber       | cvc| expirationMonth | expirationYear |
-            | Automation | ACCOUNT CREATED! | I want to place the order | 3566000020000410 | 123 | 02              | 2026           |
+            | message                                         | accountText      | description               | cardnumber       | cvc | expirationMonth | expirationYear |
+            | Congratulations! Your order has been confirmed! | ACCOUNT CREATED! | I want to place the order | 3566000020000410 | 123 | 02              | 2026           |

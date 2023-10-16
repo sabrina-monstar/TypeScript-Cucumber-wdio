@@ -125,16 +125,17 @@ When(/^Enter payment details: Name on Card and (.*) and (.*) and (.*) and (.*)$/
     (await cartPage.ExpireMonth).setValue(expirationMonth);
     await browser.pause(5000);
     (await cartPage.ExpireYear).setValue(expirationYear);
-    await browser.pause(5000);
-    (await cartPage.submit).click()
-    await browser.pause(6000);
-   
+    await browser.pause(5000);   
 
 });
 
-// When(/^Click Pay and Confirm Order button$/, async function () {
-// });
+When(/^Click Pay and Confirm Order button$/, async function () {
+    (await cartPage.submit).click()
+     await browser.pause(6000); 
+});
 
-// Then(/^Verify the success message (.*)$/, async function () {
-// });
+Then(/^Verify the success (.*)$/, async function (message) {
+    expect(cartPage.orderMessage).toHaveTextContaining(message)
+    await browser.pause(3000); 
+});
 
