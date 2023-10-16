@@ -143,10 +143,10 @@ export const config: Options.Testrunner = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        //require: ["./test/features/step-definations/Cart.ts"],
-        require: ["./test/features/step-definations/given.ts",
-                  "./test/features/step-definations/then.ts", 
-                  "./test/features/step-definations/when.ts" ],
+        require: ["./test/features/step-definations/Webdemo.ts"],
+        // require: ["./test/features/step-definations/given.ts",
+        //           "./test/features/step-definations/then.ts", 
+        //           "./test/features/step-definations/when.ts" ],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -162,7 +162,7 @@ export const config: Options.Testrunner = {
         // <boolean> fail if there are any undefined or pending steps
         strict: false,
         // <string> (expression) only execute the features or scenarios with tags matching the expression
-        tags: '@Product',
+        tags: '@Webdemo',
         // <number> timeout for step definitions
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.

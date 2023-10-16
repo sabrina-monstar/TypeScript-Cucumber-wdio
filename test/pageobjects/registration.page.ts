@@ -1,7 +1,7 @@
 import Page from "./page";
 
 class RegistrationPage extends Page {
-    
+
     //Registration_form_personal_details
     get uname() { return $(`input[data-qa='login-email']`) }
     get password() { return $(`input[placeholder='Password']`) }
@@ -21,7 +21,7 @@ class RegistrationPage extends Page {
     get optin() { return $(`//input[@id='optin']`) }
 
 
-   //Registration_Form_Address
+    //Registration_Form_Address
     get first_Name() { return $(`#first_name`) }
     get last_name() { return $(`#last_name`) }
     get company() { return $(`#company`) }
@@ -36,7 +36,8 @@ class RegistrationPage extends Page {
 
     //after_registration
     get accoutText() { return $(`h2[class='title text-center'] b`) }
-    get continutButton() {return  $(`.btn.btn-primary`) }
+    get continutButton() { return $(`.btn.btn-primary`) }
+    get loginText() { return $(`//*[text()=' Logged in as ']`) }
 
 
     public open() {

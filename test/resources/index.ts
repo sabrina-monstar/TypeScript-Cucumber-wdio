@@ -1,6 +1,6 @@
 export default {
-  username: 'test2027',
-  email: 'sabrinamdel+13@gmail.com',
+  username: 'test01',
+  email: 'sabrinamdel+14@gmail.com',
   fName: "Pemma",
   lName: "Watson",
   companyName: "Monstarlab",

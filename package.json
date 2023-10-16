@@ -1,6 +1,7 @@
 {
   "name": "my-new-project",
   "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
     "@types/chai": "^4.3.7",
     "@wdio/allure-reporter": "^8.17.0",
     "@wdio/cli": "^8.17.0",
@@ -12,11 +13,13 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@fakerjs/email": "^1.0.0",
     "call-bind": "^1.0.2",
     "dotenv": "^16.3.1",
     "http": "^0.0.1-security"
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.ts"
+    
   }
 }

@@ -9,6 +9,7 @@ class locator {
   get home() { return $(`//a[normalize-space()='Home']`) }
 
   get pagetitle() { return $(`//title[normalize-space()='Automation Exercise']`)}
+
 }
 
   
