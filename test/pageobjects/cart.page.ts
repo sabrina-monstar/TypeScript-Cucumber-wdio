@@ -7,10 +7,10 @@ class CartPage extends Page {
     get continue() { return $(`//button[normalize-space()='Continue Shopping']`) }
     get checkout() { return $(`//a[normalize-space()='Proceed To Checkout']`) }
     get loginLink() { return $(`//u[contains(text(),'Register / Login')]`) }
-    get cartLink() { return $(`//a[normalize-space()='Cart']//i[@class='fa fa-shopping-cart']`) }
+    get cartLink() { return $(`//*[text()=' Cart']`) }
     get addressDetails() { return $(`//h2[contains(text(),'Address Details')]`) }
     get reviewOrder() { return $(`//h2[contains(text(),'Review Your Order')]`) }
-    get description() { return $(`textarea[name='message']}`) }
+    get description() { return $(`//textarea[@name='message']`) }
     get placeOrder() { return $(`//a[contains(text(),'Place Order')]`) }
     get nameOnCard() { return $(`input[name='name_on_card']`) }
     get cardNumber() { return $(`input[name='card_number']`) }
