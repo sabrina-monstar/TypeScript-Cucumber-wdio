@@ -7,8 +7,7 @@ import productPage from "../../pageobjects/product.page";
 
 Given(/^Launch the browser$/, async function () {
   cartPage.open();
-  await browser.maximizeWindow();
-  await browser.pause(3000);
+  
 });
 
 Given(/^Launch the brower$/, async function () {
@@ -34,3 +33,7 @@ Given(/^Launch the Product Page$/, async function () {
   await browser.maximizeWindow();
   await browser.pause(3000);
 });
+
+
+
+

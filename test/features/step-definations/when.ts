@@ -85,3 +85,7 @@ When(/^Click on the product page link$/, async function () {
 	productPage.productLink.click();
    await browser.pause(5000);
 });
+
+
+
+

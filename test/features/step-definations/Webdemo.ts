@@ -9,20 +9,22 @@ import resources from "../../resources";
 
 Given(/^Launch browser and navigate to url$/, async function () {
     homePage.open();
-    await browser.maximizeWindow()
-    await browser.pause(2000)
-   
+    await browser.maximizeWindow(); 
+
 });
+
 
 Then(/^Verify that homepageis visible successfully$/, async function () {
     await expect(browser).toHaveTitleContaining('Automation Exercise')
     await browser.pause(2000)
+    
 });
 
 When(/^Add products to cart$/, async function () {
     await browser.scroll(0, 700);
     (await cartPage.addToCart).click();
     await browser.pause(2000)
+       
 });
 
 When(/^Click Cart button$/, async function () {
@@ -51,7 +53,7 @@ When(/^Fill all details in Sign up and create account$/, async function () {
     (await registrationPage.email).setValue(faker.internet.email());
     (await registrationPage.submitButton).click();
     (await registrationPage.submitButton).click();
-    await browser.pause(2000);
+     await browser.pause(2000);
     (await registrationPage.title).click();
     (await registrationPage.pass).setValue(process.env.TEST_REG_PASSWORD!);
     (await registrationPage.day_ddown).selectByVisibleText(resources.date);
@@ -60,7 +62,8 @@ When(/^Fill all details in Sign up and create account$/, async function () {
     (await registrationPage.newsletter).click();
     (await registrationPage.optin).click();
     (await registrationPage.first_Name).setValue(faker.person.firstName());
-    (await registrationPage.last_name).setValue(faker.person.lastName());
+    let lastName= faker.person.lastName();
+    (await registrationPage.last_name).setValue(lastName);
     (await registrationPage.company).setValue(faker.company.name());
     (await registrationPage.address).setValue(faker.location.streetAddress());
     (await registrationPage.country).selectByVisibleText(resources.countryName);
