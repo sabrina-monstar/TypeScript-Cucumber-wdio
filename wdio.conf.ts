@@ -1,10 +1,12 @@
 import dotenv from "dotenv"
 dotenv.config()
-//require('dotenv').config()
+
 
 import type { Options } from '@wdio/types'
 
-export const config: Options.Testrunner = {
+//export const config: Options.Testrunner = {
+export const config: WebdriverIO.Config = {
+
     //
     // ====================
     // Runner Configuration
@@ -68,13 +70,11 @@ export const config: Options.Testrunner = {
         browserName: 'chrome'
     },
 
-    {
-        browserName: 'firefox',
+    // {
+    //     browserName: 'firefox',
 
-    }
+    // }
     ],
-
-
 
     //
     // ===================
@@ -159,10 +159,10 @@ export const config: Options.Testrunner = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ["./test/features/step-definations/Webdemo.ts"],
-        // require: ["./test/features/step-definations/given.ts",
-        //           "./test/features/step-definations/then.ts", 
-        //           "./test/features/step-definations/when.ts" ],
+        //require: ["./test/features/step-definations/Test.ts"],
+        require: ["./test/features/step-definations/given.ts",
+                  "./test/features/step-definations/then.ts", 
+                  "./test/features/step-definations/when.ts" ],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -178,7 +178,7 @@ export const config: Options.Testrunner = {
         // <boolean> fail if there are any undefined or pending steps
         strict: false,
         // <string> (expression) only execute the features or scenarios with tags matching the expression
-        tags: '@Webdemo',
+        tags:'@Register',
         // <number> timeout for step definitions
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.

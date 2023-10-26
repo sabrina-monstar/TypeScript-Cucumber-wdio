@@ -13,7 +13,6 @@ Given(/^Launch browser and navigate to url$/, async function () {
 
 });
 
-
 Then(/^Verify that homepageis visible successfully$/, async function () {
     await expect(browser).toHaveTitleContaining('Automation Exercise')
     await browser.pause(2000)
@@ -62,8 +61,7 @@ When(/^Fill all details in Sign up and create account$/, async function () {
     (await registrationPage.newsletter).click();
     (await registrationPage.optin).click();
     (await registrationPage.first_Name).setValue(faker.person.firstName());
-    let lastName= faker.person.lastName();
-    (await registrationPage.last_name).setValue(lastName);
+    (await registrationPage.last_name).setValue(faker.person.lastName());
     (await registrationPage.company).setValue(faker.company.name());
     (await registrationPage.address).setValue(faker.location.streetAddress());
     (await registrationPage.country).selectByVisibleText(resources.countryName);

@@ -14,12 +14,13 @@
   },
   "dependencies": {
     "@fakerjs/email": "^1.0.0",
+    "async-await": "^0.1.40",
     "call-bind": "^1.0.2",
     "dotenv": "^16.3.1",
     "http": "^0.0.1-security"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.ts"
-    
+    "wdio": "wdio run ./wdio.conf.ts",
+     "test": "wdio run ./wdio.conf.ts --spec Register.feature"
   }
 }
