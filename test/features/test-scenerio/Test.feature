@@ -1,4 +1,4 @@
-@smoke
+@smoke @test
 Feature: Test the attributes of a given element
 
     Background: test url

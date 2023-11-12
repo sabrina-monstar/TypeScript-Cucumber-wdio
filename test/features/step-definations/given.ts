@@ -22,7 +22,6 @@ Given(/^Launch the brower$/, async function () {
 Given(/^open the browser and navigate to test url$/, async function () {
   registrationPage.open();
   await browser.maximizeWindow();
-  await browser.pause(3000);
 
 });
 

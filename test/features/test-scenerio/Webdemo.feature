@@ -1,6 +1,6 @@
 Feature: Demo
 
-    @Webdemo
+    @webdemo
     Scenario Outline: I want to complete the full flow on the website
 
         Given Launch browser and navigate to url
@@ -10,6 +10,8 @@ Feature: Demo
         Then Verify that cart page is displayed
         When Click Proceed To Checkout
         And  Click Register button
+        And Enter login credential and Password and DOB <date> and <month> and <year>
+        And User will select the newsletter and special offer
         And Fill all details in Sign up and create account
         Then Verify <accountText> and click Continue button
         And  Verify Logged in as username at top
@@ -22,6 +24,5 @@ Feature: Demo
         Then Verify the success <message>
 
         Examples:
-            | message                                         | accountText      | description               | cardnumber       | cvc | expirationMonth | expirationYear |
-            | Congratulations! Your order has been confirmed! | ACCOUNT CREATED! | I want to place the order | 3566000020000410 | 123 | 02              | 2026           |
-            
+            | message                                         | accountText      | description               | cardnumber       | cvc | expirationMonth | expirationYear | date | month  | year |
+            | Congratulations! Your order has been confirmed! | ACCOUNT CREATED! | I want to place the order | 3566000020000410 | 123 | 02              | 2026           | 25   | August | 1998 |

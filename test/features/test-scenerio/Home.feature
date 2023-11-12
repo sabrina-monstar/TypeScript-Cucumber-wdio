@@ -1,4 +1,4 @@
-@Home
+@home
 Feature: Home Page
    
     Background: common url

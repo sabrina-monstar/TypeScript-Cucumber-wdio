@@ -60,7 +60,8 @@ class RegistrationPage extends Page {
     }
 
     async clickNewsletter() {
-        await(await this.newsletter).click();
+        await(await this.newsletter).click()
+        //await this.newsletter.click();
         await (await this.optin).click();
 
     }

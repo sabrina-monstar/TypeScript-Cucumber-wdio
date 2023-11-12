@@ -21,6 +21,16 @@
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.ts",
-     "test": "wdio run ./wdio.conf.ts --spec Register.feature"
+    "login": "wdio wdio.conf.ts --spec Login.feature",
+    "home": "wdio wdio.conf.ts --spec Home.feature",
+    "cart":"export DEBUG=Y && wdio wdio.conf.ts --spec Cart.feature",
+    "product": "wdio wdio.conf.ts --spec Product.feature",
+    "demo": "export DEBUG=Y && export HEADLESS=Y && wdio wdio.conf.ts --cucumberOpts.tags='@register'",
+    "debug": "export DEBUG=N && export HEADLESS=N && wdio wdio.conf.ts --cucumberOpts.tags='@register'",
+    "login2": "export HEADLESS=Y && wdio wdio.conf.ts --cucumberOpts.tags='@login'",
+    
+
+    "webdemo": "export DEBUG=Y && wdio wdio.conf.ts --cucumberOpts.tags='@webdemo'",
+    "smoke": "wdio wdio.conf.ts --cucumberOpts.tags='@smoke'" 
   }
 }

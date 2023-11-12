@@ -10,32 +10,28 @@ Given(/^I open the site$/, async function () {
 });
 
 Then(/^I enter valid username and Password$/, async function () {
-    await locatorPage.sause_user.setValue(process.env.TEST_STD_USERNAME!);
-    await locatorPage.sause_pass.setValue(process.env.TEST_PASSWORD!);
+    await (await locatorPage.sause_user).setValue(process.env.TEST_USERNAME!);
+    await (await locatorPage.sause_pass).setValue(process.env.TEST_STD_PASSWORD!);
+    await (await locatorPage.log_button).click();
+    await browser.saveScreenshot('./test/resources/evidence/screenshot.png');
     await browser.pause(3000);
-    await locatorPage.log_button.click();
-    await browser.pause(3000);
-
 });
 
 Then(/^I enter invalid username and password$/, async function () {
-    await locatorPage.sause_user.setValue(process.env.TEST_STD_USERNAME!);
-    await locatorPage.sause_pass.setValue(process.env.TEST_REG_PASSWORD!);
-    await browser.pause(3000);
-    await locatorPage.log_button.click();
+    await (await locatorPage.sause_user).setValue(process.env.TEST_USERNAME!);
+    await (await locatorPage.sause_pass).setValue(process.env.TEST_PASSWORD!);
+    await (await locatorPage.log_button).click();
     await browser.pause(3000);
 });
 
 When(/^Click on the logout button$/, async function () {
-    await locatorPage.sause_user.setValue(process.env.TEST_STD_USERNAME!);
-    await locatorPage.sause_pass.setValue(process.env.TEST_PASSWORD!);
+    await (await locatorPage.sause_user).setValue(process.env.TEST_USERNAME!);
+    await (await locatorPage.sause_pass).setValue(process.env.TEST_STD_PASSWORD!);
+    await (await locatorPage.log_button).click();
+    await (await locatorPage.burger_icon).click();
     await browser.pause(3000);
-    await locatorPage.log_button.click();
+    await (await locatorPage.logout).click();
     await browser.pause(3000);
-    (await locatorPage.burger_icon).click();
-    await browser.pause(3000);
-    (await locatorPage.logout).click();
-    await browser.pause(3000);
-	
+
 });
 

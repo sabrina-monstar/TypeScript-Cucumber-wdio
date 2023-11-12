@@ -1,5 +1,6 @@
+@product
 Feature: Product Page
-    @Product
+  
     Scenario Outline: I want to visit the Product page
 
         Given Launch the Product Page

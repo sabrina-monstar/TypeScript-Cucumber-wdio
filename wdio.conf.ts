@@ -1,10 +1,13 @@
 import dotenv from "dotenv"
 dotenv.config()
+let headless = process.env.HEADLESS
+let debug= process.env.DEBUG
+console.log(`>> headless flag ${headless}`);
+ import fs from "fs"
 
 
 import type { Options } from '@wdio/types'
 
-//export const config: Options.Testrunner = {
 export const config: WebdriverIO.Config = {
 
     //
@@ -44,6 +47,8 @@ export const config: WebdriverIO.Config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
+     
+
     //
     // ============
     // Capabilities
@@ -67,12 +72,20 @@ export const config: WebdriverIO.Config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
-    },
+        browserName: 'chrome',
+        "goog:chromeOptions": {
+            args: headless === "Y" ? ["--disable-web-security", "--headless", "--disable-dev-shm-usage", "--no-sandbox", "--window-size=1920,1080"] : []
+        },
+        acceptInsecureCerts: true,
+        timeouts: { implicit: 10000, pageLoad: 20000, script: 30000 },
+
+    }
 
     // {
     //     browserName: 'firefox',
-
+    //     "moz:firefoxOptions": { 
+    //         args: headless === "Y" ? ["--disable-web-security", "--headless", "--disable-dev-shm-usage", "--no-sandbox", "--window-size=1920,1080"] : []
+    //     },
     // }
     ],
 
@@ -83,7 +96,10 @@ export const config: WebdriverIO.Config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: debug?.toUpperCase() === "Y" ? 'info' : 'error',
+    
+    //debug?.toUpperCase()=== "Y" ? 'info':
+
     //
     // Set specific log levels per logger
     // loggers:
@@ -159,11 +175,11 @@ export const config: WebdriverIO.Config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        //require: ["./test/features/step-definations/Test.ts"],
+        //require: ["./test/features/step-definations/*.ts"],
         require: ["./test/features/step-definations/given.ts",
                   "./test/features/step-definations/then.ts", 
                   "./test/features/step-definations/when.ts" ],
-        // <boolean> show full backtrace for errors
+        // // // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
         requireModule: [],
@@ -178,7 +194,7 @@ export const config: WebdriverIO.Config = {
         // <boolean> fail if there are any undefined or pending steps
         strict: false,
         // <string> (expression) only execute the features or scenarios with tags matching the expression
-        tags:'@Register',
+        tags:'@product',
         // <number> timeout for step definitions
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
@@ -198,8 +214,12 @@ export const config: WebdriverIO.Config = {
      * @param {object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    // onPrepare: function (config, capabilities) {
-    // },
+    onPrepare: function (config, capabilities) {
+            if (process.env.RUNNER === "LOCAL" && fs.existsSync("./allure-results")) {
+                fs.rmdirSync("./allure-results", { recursive: true })
+            }
+
+    },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
      * for that worker as well as modify runtime environments in an async fashion.

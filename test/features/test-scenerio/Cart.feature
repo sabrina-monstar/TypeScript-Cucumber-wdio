@@ -1,7 +1,7 @@
 
 Feature: Add to Cart Page
 
-    @Cart
+    @cart
     Scenario Outline: I want to add an item to the cart
 
         Given Launch the browser
